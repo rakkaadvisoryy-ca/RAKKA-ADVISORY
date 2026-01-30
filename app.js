@@ -74,3 +74,4 @@ function setStatus(msg, isError) {
   statusEl.textContent = msg;
   statusEl.style.color = isError ? "#ff9aa2" : "#9fffd3";
 }
+
