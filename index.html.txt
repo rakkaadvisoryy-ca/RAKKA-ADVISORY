@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rakka Advisory • Visa Support • Emotional Support • Computer Classes</title>
+  <meta name="description" content="Rakka Advisory provides visa assistance, emotional support sessions, and computer classes. Pay securely via M-Pesa STK Push." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home">
+        <span class="logo"></span>
+        <span class="brand-text">
+          <strong>Rakka Advisory</strong>
+          <small>Support that moves you forward</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#prices">Prices</a>
+        <a href="#pay">Pay Now</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="cta" href="#pay">Pay with M-Pesa</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Visa support, emotional support, and computer classes — in one trusted place.</h1>
+          <p>
+            We help clients prepare strong applications, stay supported through stressful moments,
+            and build digital skills that open opportunities.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#services">Explore services</a>
+            <a class="btn" href="#pay">Pay via M-Pesa</a>
+          </div>
+
+          <div class="trust">
+            <div class="pill">Professional & Confidential</div>
+            <div class="pill">Fast response</div>
+            <div class="pill">M-Pesa STK Push</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-illustration" aria-hidden="true"></div>
+          <div class="hero-card-body">
+            <h3>Quick Pay</h3>
+            <p>Enter your number, confirm on your phone, and you’re done.</p>
+            <a class="btn primary full" href="#pay">Pay now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our services</h2>
+          <p>Pick what you need today — we keep it simple and professional.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon visa" aria-hidden="true"></div>
+            <h3>Visa Application Support</h3>
+            <p>
+              Document checklist, letters, itinerary, booking guidance, and overall application review —
+              tailored to your destination and purpose.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon support" aria-hidden="true"></div>
+            <h3>Emotional Support Sessions</h3>
+            <p>
+              Calm, confidential sessions to help you manage pressure, relationships, stress, and life direction —
+              with practical steps you can use immediately.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon classes" aria-hidden="true"></div>
+            <h3>Computer Classes</h3>
+            <p>
+              Beginner to intermediate: email & internet, Office tools, online applications, safe browsing,
+              and practical digital skills for work and study.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Prices</h2>
+          <p>Use the exact prices from your last website here (edit this section).</p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Visa Support</h3>
+            <p class="muted">From</p>
+            <div class="amount">KES <span data-price="visa">5000</span></div>
+            <ul>
+              <li>Checklist & document guidance</li>
+              <li>Letter drafting support</li>
+              <li>Itinerary & review</li>
+            </ul>
+            <a class="btn primary full" href="#pay" data-pick="Visa Support" data-amt="5000">Pay for Visa Support</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Emotional Support</h3>
+            <p class="muted">From</p>
+            <div class="amount">KES <span data-price="support">2000</span></div>
+            <ul>
+              <li>Private session</li>
+              <li>Practical action plan</li>
+              <li>Confidential & respectful</li>
+            </ul>
+            <a class="btn primary full" href="#pay" data-pick="Emotional Support" data-amt="2000">Pay for a Session</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Computer Classes</h3>
+            <p class="muted">From</p>
+            <div class="amount">KES <span data-price="classes">3000</span></div>
+            <ul>
+              <li>Hands-on learning</li>
+              <li>Beginner friendly</li>
+              <li>Useful for jobs & school</li>
+            </ul>
+            <a class="btn primary full" href="#pay" data-pick="Computer Classes" data-amt="3000">Pay for Classes</a>
+          </div>
+        </div>
+
+        <p class="note">
+          Want different packages (Basic / Standard / Premium)? Tell me the exact list and prices from your old site and I’ll set them perfectly.
+        </p>
+      </div>
+    </section>
+
+    <section id="pay" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pay with M-Pesa (STK Push)</h2>
+          <p>Enter your number, confirm the prompt on your phone, and you’ll receive payment confirmation on-screen.</p>
+        </div>
+
+        <div class="pay-grid">
+          <div class="paybox">
+            <label>Service</label>
+            <input id="serviceName" placeholder="e.g. Visa Support" />
+
+            <label>Amount (KES)</label>
+            <input id="mpesaAmount" type="number" min="1" placeholder="e.g. 5000" />
+
+            <label>Your M-Pesa Phone Number</label>
+            <input id="mpesaPhone" placeholder="07XXXXXXXX or 2547XXXXXXXX" />
+
+            <button class="btn primary full" id="payBtn">Pay Now</button>
+            <p id="payStatus" class="status"></p>
+            <small class="muted">
+              You will receive a Safaricom prompt on your phone. Confirm and enter your M-Pesa PIN to complete.
+            </small>
+          </div>
+
+          <div class="pay-info card-lite">
+            <h3>What happens after you click Pay?</h3>
+            <ol>
+              <li>We send a secure request to Safaricom (Daraja).</li>
+              <li>You receive a payment prompt on your phone.</li>
+              <li>You confirm and enter your PIN.</li>
+              <li>Your payment is recorded and we proceed with your service.</li>
+            </ol>
+            <p class="muted">If you don’t see a prompt, ensure your number is correct and your phone has network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>These visuals are original SVG patterns (safe). Replace with your real photos anytime.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gitem g1" title="Visa support"></div>
+          <div class="gitem g2" title="Guidance & support"></div>
+          <div class="gitem g3" title="Computer classes"></div>
+          <div class="gitem g4" title="Professional service"></div>
+          <div class="gitem g5" title="Client success"></div>
+          <div class="gitem g6" title="Learning & growth"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Contact</h2>
+          <p><strong>Calls:</strong> 0773 701865</p>
+          <p><strong>WhatsApp:</strong> 0739 477171</p>
+          <p><strong>Email:</strong> rakkaadvisory@gmail.com</p>
+          <p class="muted">We respond as soon as possible. Your information is treated with confidentiality.</p>
+        </div>
+
+        <div class="card-lite">
+          <h3>Quick WhatsApp</h3>
+          <p class="muted">Tap the button below if you’re on mobile, or use the number above.</p>
+          <a class="btn full" id="waBtn" href="#" rel="noopener">Open WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Rakka Advisory. All rights reserved.</small>
+      <small class="muted">Payments processed via Safaricom M-Pesa.</small>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="mpesaModal" class="modal" style="display:none;">
+    <div class="modal-card">
+      <h4>Confirm Payment</h4>
+      <p id="mpesaModalText"></p>
+      <div class="modal-actions">
+        <button class="btn" id="cancelPay">Cancel</button>
+        <button class="btn primary" id="confirmPay">Confirm</button>
+      </div>
+      <small class="muted">Make sure the prompt shows the correct business before entering your PIN.</small>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
