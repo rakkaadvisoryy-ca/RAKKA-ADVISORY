@@ -5,8 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rakka Advisory • Visa Support • Emotional Support • Computer Classes</title>
   <meta name="description" content="Rakka Advisory provides visa assistance, emotional support sessions, and computer classes. Pay securely via M-Pesa STK Push." />
-  <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#0f1a33;
+      --card:#0f1c35;
+      --text:#e9eefc;
+      --muted:#b7c2e1;
+      --accent:#34d399;
+      --accent2:#fbbf24;
+      --line:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#070b14);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92vw);margin:0 auto}
+
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .topbar-inner{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .brand-text{display:flex;flex-direction:column;line-height:1}
+    .brand-text small{color:var(--muted);font-size:12px;margin-top:3px}
+    .nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .nav a{padding:8px 10px;border-radius:10px;color:var(--muted)}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .cta{padding:10px 14px;border-radius:12px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25)}
+    .cta:hover{background:rgba(52,211,153,.18)}
+
+    .hero{padding:54px 0 28px;background:
+      radial-gradient(1000px 500px at 30% 10%,rgba(52,211,153,.18),transparent 60%),
+      radial-gradient(900px 480px at 80% 20%,rgba(251,191,36,.14),transparent 60%)}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:stretch}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.08;margin:0 0 12px}
+    .hero p{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 16px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);cursor:pointer}
+    .btn:hover{background:rgba(255,255,255,.09)}
+    .btn.primary{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.16)}
+    .btn.primary:hover{background:rgba(52,211,153,.22)}
+    .btn.full{width:100%}
+
+    .trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .pill{font-size:12px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.04);padding:7px 10px;border-radius:999px}
+
+    .hero-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.04)}
+    .hero-illustration{height:180px;background:
+      radial-gradient(220px 120px at 20% 40%,rgba(52,211,153,.35),transparent 60%),
+      radial-gradient(240px 140px at 70% 30%,rgba(251,191,36,.28),transparent 65%),
+      linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    }
+    .hero-card-body{padding:14px}
+
+    .section{padding:46px 0}
+    .section.alt{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+    .section-head h2{margin:0 0 6px;font-size:28px}
+    .section-head p{margin:0 0 18px;color:var(--muted);line-height:1.6}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:16px}
+    .card h3{margin:10px 0 6px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+
+    .icon{width:40px;height:40px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);position:relative;overflow:hidden}
+    .icon::after{content:"";position:absolute;inset:-20px;background:
+      radial-gradient(circle at 30% 30%,rgba(52,211,153,.35),transparent 55%),
+      radial-gradient(circle at 70% 60%,rgba(251,191,36,.25),transparent 55%)
+    }
+
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .price-card{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:16px}
+    .amount{font-size:30px;font-weight:800;margin:6px 0 12px}
+    .muted{color:var(--muted)}
+    .price-card ul{margin:0 0 14px;padding-left:18px;color:var(--muted);line-height:1.7}
+    .note{margin-top:16px;color:var(--muted)}
+
+    .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+    .paybox{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:16px}
+    .paybox label{display:block;color:var(--muted);font-size:13px;margin:10px 0 6px}
+    .paybox input{width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(7,11,20,.55);color:var(--text);outline:none}
+    .paybox input:focus{border-color:rgba(52,211,153,.45)}
+    .status{margin:12px 0 6px}
+    .card-lite{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);padding:16px}
+    .card-lite ol{margin:10px 0 0;color:var(--muted);line-height:1.7}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gitem{border:1px solid var(--line);border-radius:18px;height:160px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
+    .gitem::after{content:"";position:absolute;inset:-40px;transform:rotate(8deg);
+      background:
+        radial-gradient(180px 120px at 20% 40%,rgba(52,211,153,.22),transparent 60%),
+        radial-gradient(220px 130px at 70% 30%,rgba(251,191,36,.18),transparent 65%),
+        linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    }
+    .g1::after{transform:rotate(4deg)}
+    .g2::after{transform:rotate(-6deg)}
+    .g3::after{transform:rotate(10deg)}
+    .g4::after{transform:rotate(-10deg)}
+    .g5::after{transform:rotate(6deg)}
+    .g6::after{transform:rotate(-2deg)}
+
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+    .footer{border-top:1px solid var(--line);padding:18px 0;background:rgba(255,255,255,.02)}
+    .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:18px}
+    .modal-card{width:min(460px,95vw);border-radius:18px;border:1px solid var(--line);background:rgba(10,16,30,.96);padding:16px}
+    .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+    @media (max-width: 920px){
+      .hero-grid,.cards,.pricing,.pay-grid,.gallery,.contact{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
 </head>
+
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
@@ -55,7 +169,7 @@
           <div class="hero-illustration" aria-hidden="true"></div>
           <div class="hero-card-body">
             <h3>Quick Pay</h3>
-            <p>Enter your number, confirm on your phone, and you’re done.</p>
+            <p class="muted">Enter your number, confirm on your phone, and you’re done.</p>
             <a class="btn primary full" href="#pay">Pay now</a>
           </div>
         </div>
@@ -71,7 +185,7 @@
 
         <div class="cards">
           <article class="card">
-            <div class="icon visa" aria-hidden="true"></div>
+            <div class="icon" aria-hidden="true"></div>
             <h3>Visa Application Support</h3>
             <p>
               Document checklist, letters, itinerary, booking guidance, and overall application review —
@@ -80,7 +194,7 @@
           </article>
 
           <article class="card">
-            <div class="icon support" aria-hidden="true"></div>
+            <div class="icon" aria-hidden="true"></div>
             <h3>Emotional Support Sessions</h3>
             <p>
               Calm, confidential sessions to help you manage pressure, relationships, stress, and life direction —
@@ -89,7 +203,7 @@
           </article>
 
           <article class="card">
-            <div class="icon classes" aria-hidden="true"></div>
+            <div class="icon" aria-hidden="true"></div>
             <h3>Computer Classes</h3>
             <p>
               Beginner to intermediate: email & internet, Office tools, online applications, safe browsing,
@@ -104,50 +218,46 @@
       <div class="container">
         <div class="section-head">
           <h2>Prices</h2>
-          <p>Use the exact prices from your last website here (edit this section).</p>
+          <p class="muted">Edit these to match your last website prices exactly.</p>
         </div>
 
         <div class="pricing">
           <div class="price-card">
             <h3>Visa Support</h3>
             <p class="muted">From</p>
-            <div class="amount">KES <span data-price="visa">5000</span></div>
+            <div class="amount">KES <span>5000</span></div>
             <ul>
               <li>Checklist & document guidance</li>
               <li>Letter drafting support</li>
               <li>Itinerary & review</li>
             </ul>
-            <a class="btn primary full" href="#pay" data-pick="Visa Support" data-amt="5000">Pay for Visa Support</a>
+            <a class="btn primary full pick" href="#pay" data-pick="Visa Support" data-amt="5000">Pay for Visa Support</a>
           </div>
 
           <div class="price-card">
             <h3>Emotional Support</h3>
             <p class="muted">From</p>
-            <div class="amount">KES <span data-price="support">2000</span></div>
+            <div class="amount">KES <span>2000</span></div>
             <ul>
               <li>Private session</li>
               <li>Practical action plan</li>
               <li>Confidential & respectful</li>
             </ul>
-            <a class="btn primary full" href="#pay" data-pick="Emotional Support" data-amt="2000">Pay for a Session</a>
+            <a class="btn primary full pick" href="#pay" data-pick="Emotional Support" data-amt="2000">Pay for a Session</a>
           </div>
 
           <div class="price-card">
             <h3>Computer Classes</h3>
             <p class="muted">From</p>
-            <div class="amount">KES <span data-price="classes">3000</span></div>
+            <div class="amount">KES <span>3000</span></div>
             <ul>
               <li>Hands-on learning</li>
               <li>Beginner friendly</li>
               <li>Useful for jobs & school</li>
             </ul>
-            <a class="btn primary full" href="#pay" data-pick="Computer Classes" data-amt="3000">Pay for Classes</a>
+            <a class="btn primary full pick" href="#pay" data-pick="Computer Classes" data-amt="3000">Pay for Classes</a>
           </div>
         </div>
-
-        <p class="note">
-          Want different packages (Basic / Standard / Premium)? Tell me the exact list and prices from your old site and I’ll set them perfectly.
-        </p>
       </div>
     </section>
 
@@ -155,7 +265,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Pay with M-Pesa (STK Push)</h2>
-          <p>Enter your number, confirm the prompt on your phone, and you’ll receive payment confirmation on-screen.</p>
+          <p>Enter your number, confirm the prompt on your phone, and payment will go to Rakka Advisory’s M-Pesa Business account.</p>
         </div>
 
         <div class="pay-grid">
@@ -171,20 +281,21 @@
 
             <button class="btn primary full" id="payBtn">Pay Now</button>
             <p id="payStatus" class="status"></p>
+
             <small class="muted">
-              You will receive a Safaricom prompt on your phone. Confirm and enter your M-Pesa PIN to complete.
+              You will receive a Safaricom payment prompt on your phone. Confirm and enter your M-Pesa PIN to complete.
             </small>
           </div>
 
-          <div class="pay-info card-lite">
-            <h3>What happens after you click Pay?</h3>
+          <div class="card-lite">
+            <h3>How payment works</h3>
             <ol>
               <li>We send a secure request to Safaricom (Daraja).</li>
               <li>You receive a payment prompt on your phone.</li>
               <li>You confirm and enter your PIN.</li>
-              <li>Your payment is recorded and we proceed with your service.</li>
+              <li>We proceed with your service.</li>
             </ol>
-            <p class="muted">If you don’t see a prompt, ensure your number is correct and your phone has network.</p>
+            <p class="muted">If you don’t see a prompt, double-check your number and network.</p>
           </div>
         </div>
       </div>
@@ -194,16 +305,16 @@
       <div class="container">
         <div class="section-head">
           <h2>Gallery</h2>
-          <p>These visuals are original SVG patterns (safe). Replace with your real photos anytime.</p>
+          <p class="muted">These are original, non-copyright visuals. Replace with your real photos anytime.</p>
         </div>
 
         <div class="gallery">
-          <div class="gitem g1" title="Visa support"></div>
-          <div class="gitem g2" title="Guidance & support"></div>
-          <div class="gitem g3" title="Computer classes"></div>
-          <div class="gitem g4" title="Professional service"></div>
-          <div class="gitem g5" title="Client success"></div>
-          <div class="gitem g6" title="Learning & growth"></div>
+          <div class="gitem g1"></div>
+          <div class="gitem g2"></div>
+          <div class="gitem g3"></div>
+          <div class="gitem g4"></div>
+          <div class="gitem g5"></div>
+          <div class="gitem g6"></div>
         </div>
       </div>
     </section>
@@ -220,7 +331,7 @@
 
         <div class="card-lite">
           <h3>Quick WhatsApp</h3>
-          <p class="muted">Tap the button below if you’re on mobile, or use the number above.</p>
+          <p class="muted">Message us directly for guidance and pricing.</p>
           <a class="btn full" id="waBtn" href="#" rel="noopener">Open WhatsApp</a>
         </div>
       </div>
@@ -234,7 +345,6 @@
     </div>
   </footer>
 
-  <!-- Modal -->
   <div id="mpesaModal" class="modal" style="display:none;">
     <div class="modal-card">
       <h4>Confirm Payment</h4>
@@ -243,11 +353,88 @@
         <button class="btn" id="cancelPay">Cancel</button>
         <button class="btn primary" id="confirmPay">Confirm</button>
       </div>
-      <small class="muted">Make sure the prompt shows the correct business before entering your PIN.</small>
+      <small class="muted">Only confirm if the prompt shows the correct business details.</small>
     </div>
   </div>
-<script>window.RAKKA_API_BASE="https://rakkapayments.rakka-advisoryy.workers.dev";</script>
-  <script src="assets/app.js"></script>
+
+  <script>
+    // ✅ SET THIS to your Cloudflare Worker URL (NO trailing slash)
+    const API_BASE = "https://YOUR-WORKER.yourname.workers.dev";
+
+    const modal = document.getElementById("mpesaModal");
+    const modalText = document.getElementById("mpesaModalText");
+    const statusEl = document.getElementById("payStatus");
+
+    const phoneEl = document.getElementById("mpesaPhone");
+    const amountEl = document.getElementById("mpesaAmount");
+    const serviceEl = document.getElementById("serviceName");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("waBtn").href =
+      "https://wa.me/254739477171?text=" + encodeURIComponent("Hello Rakka Advisory, I need assistance.");
+
+    document.querySelectorAll(".pick").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        serviceEl.value = btn.dataset.pick || "";
+        amountEl.value = btn.dataset.amt || "";
+      });
+    });
+
+    document.getElementById("payBtn").addEventListener("click", () => {
+      const phone = phoneEl.value.trim();
+      const amount = Math.floor(Number(amountEl.value));
+      const service = (serviceEl.value.trim() || "Rakka Advisory Service");
+
+      if (!phone) return setStatus("Please enter your M-Pesa phone number.", true);
+      if (!amount || amount < 1) return setStatus("Please enter a valid amount.", true);
+
+      modalText.textContent =
+        `You are about to pay KES ${amount.toLocaleString()} for "${service}" to Rakka Advisory via M-Pesa. Continue?`;
+      modal.style.display = "flex";
+    });
+
+    document.getElementById("cancelPay").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    document.getElementById("confirmPay").addEventListener("click", async () => {
+      modal.style.display = "none";
+      setStatus("Sending payment request…", false);
+
+      try {
+        if (!API_BASE.includes("workers.dev") && !API_BASE.startsWith("https://")) {
+          throw new Error("API_BASE is not set. Add your Cloudflare Worker URL in the code.");
+        }
+
+        const phone = phoneEl.value.trim();
+        const amount = Math.floor(Number(amountEl.value));
+        const service = (serviceEl.value.trim() || "Rakka Advisory Service");
+
+        const res = await fetch(`${API_BASE}/api/mpesa/stkpush`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            phone,
+            amount,
+            accountReference: "RAKKA",
+            description: `Payment: ${service}`,
+            service
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || "Payment request failed.");
+
+        setStatus("Request sent. Check your phone for the M-Pesa prompt and enter your PIN to complete.", false);
+      } catch (e) {
+        setStatus(" " + (e.message || "Something went wrong."), true);
+      }
+    });
+
+    function setStatus(msg, isError) {
+      statusEl.textContent = msg;
+      statusEl.style.color = isError ? "#ff9aa2" : "#9fffd3";
+    }
+  </script>
 </body>
 </html>
-
